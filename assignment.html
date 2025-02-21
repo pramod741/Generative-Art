@@ -59,15 +59,14 @@
 
         function draw(event) {
             if (!drawing) return;
-            ctx.strokeStyle = "rgba(173, 216, 230, 0.8)"; // Light Blue X-ray effect with moderate brightness
+            ctx.strokeStyle = "rgba(173, 216, 230, 0.8)";
             ctx.lineWidth = 2;
             ctx.lineCap = "round";
             ctx.beginPath();
             ctx.moveTo(lastX, lastY);
             ctx.lineTo(event.clientX, event.clientY);
             ctx.stroke();
-            
-            // Mirror effect for both sides
+
             let mirrorX = canvas.width - event.clientX;
             ctx.beginPath();
             ctx.moveTo(canvas.width - lastX, lastY);
